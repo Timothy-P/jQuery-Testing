@@ -4,15 +4,28 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
-                $("p").click(function(){
+                $(".p").click(function(){
                     $(this).hide();
                 });
             });
+            
         </script>
     </head>
     <body>
-        <p>If you click on me, I will disappear.</p>
-        <p>Click me away!</p>
-        <p>Click me too!</p>
+        <p class="p">If you click on me, I will disappear.</p>
+        <p class="p">Click me away!</p>
+        <p class="p">Click me too!</p>
+        <p>But I won't.</p>
+        <center>
+            <button id="button">Hide/Show</button>
+            <div id="div">
+                <p>
+                    You can hide or show this by clicking the button above.
+                </p>
+                <p>
+                    And this is a seperate element.
+                </p>
+            </div>
+        </center>
     </body>
 </html>
