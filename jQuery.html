@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            a {
+                text-decoration: underline;
+            }
+        </style>
         <title>
             jQuery Testing
         </title>
@@ -75,10 +80,16 @@
             <button onclick="D()">Move left</button>
             <div id="divo" class="div" style="background-color: bisque; width: 20em; height: auto; position: absolute; left: 0%;">
                 <p>
-                    You can hide or show this by clicking the button above.
+                    I can <a onclick="A()">hide</a>!
                 </p>
                 <p>
-                    And this is a seperate element.
+                    I can <a onclick="B()">fade out!</a>
+                </p>
+                <p>
+                    I can <a onclick="C()">slide up</a>!
+                </p>
+                <p onclick="D()" style="text-decoration: underline;">
+                    And I don't like being touched.
                 </p>
                 <p id="leftstuff"></p>
             </div>
