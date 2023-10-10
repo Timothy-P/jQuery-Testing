@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>
+            jQuery Testing
+        </title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script>
+            var Alpha = "0"
+            function A() {
+                if (Alpha == "0") {
+                    $('div').hide(1000);
+                    Alpha = "1"
+                }
+                else {
+                    $('div').show(1000);
+                    Alpha = "0"
+                }
+            }
+            $('.button').on('click', A)
             $(document).ready(function(){
                 $(".p").click(function(){
                     $(this).hide();
                 });
             });
-            
+            function B() {
+                if (Alpha == "0") {
+                    $('div').fadeOut(1000);
+                    Alpha = "1"
+                }
+                else {
+                    $('div').fadeIn(1000);
+                    Alpha = "0"
+                }
+            }
+
+            function C() {
+                if (Alpha == "0") {
+                    $('div').slideDown(1000);
+                    Alpha = "1"
+                }
+                else {
+                    $('div').slideUp(1000);
+                    Alpha = "0"
+                }
+            }
+            $(document).ready(function(){
+                $(".p").click(function(){
+                    $(this).hide();
+                });
+            });
+            function D() {
+                if (document.getElementById("divo").style.left >= "1540px") {
+                    $("div").animate({left: '-=154px'});
+                    setTimeout(10000, document.getElementById("leftstuff").innerHTML = document.getElementById("divo").style.left)
+                    
+                }
+                else {
+                    $("div").animate({left: '+=154px'});
+                    setTimeout(10000, document.getElementById("leftstuff").innerHTML = document.getElementById("divo").style.left)
+                }
+            }
         </script>
     </head>
     <body>
@@ -17,14 +68,19 @@
         <p class="p">Click me too!</p>
         <p>But I won't.</p>
         <center>
-            <button id="button">Hide/Show</button>
-            <div id="div">
+            <button onclick="A()">Hide/Show</button>
+            <button onclick="B()">Fade in/out</button>
+            <button onclick="C()">Slide up/down</button>
+            <br>
+            <button onclick="D()">Move left</button>
+            <div id="divo" class="div" style="background-color: bisque; width: 20em; height: auto; position: absolute; left: 0%;">
                 <p>
                     You can hide or show this by clicking the button above.
                 </p>
                 <p>
                     And this is a seperate element.
                 </p>
+                <p id="leftstuff"></p>
             </div>
         </center>
     </body>
